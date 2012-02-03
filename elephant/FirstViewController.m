@@ -9,6 +9,9 @@
 #import "FirstViewController.h"
 
 @implementation FirstViewController
+@synthesize segment;
+@synthesize memoriesList;
+@synthesize memoriesCalendar;
 
 - (void)didReceiveMemoryWarning
 {
@@ -22,10 +25,16 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    //memoriesList        = [[UIViewController alloc] initWithNibName:@"MemoriesList" bundle:nil];
+    //memoriesCalendar    = [[UIViewController alloc] initWithNibName:@"MemoriesCalendar" bundle:nil];
 }
 
 - (void)viewDidUnload
 {
+    [self setSegment:nil];
+    [self setSegment:nil];
+    [self setMemoriesList:nil];
+    [self setMemoriesCalendar:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -57,4 +66,22 @@
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
+- (IBAction)segmentDidChange:(id)sender {
+    UISegmentedControl *segment = (UISegmentedControl *) sender;
+    NSLog(@"segment changed!");
+    if (segment.selectedSegmentIndex == 0) {
+        NSLog(@"SELECTED INDEX IS 0");
+        NSLog(@"list is hidden? %i", memoriesList.isHidden);
+        NSLog(@"calendar is hidden? %i", memoriesCalendar.isHidden);
+        [memoriesList setHidden:NO];
+        [memoriesCalendar setHidden:YES];
+    }
+    else {
+        NSLog(@"SELECTED INDEX IS 1");
+        NSLog(@"list is hidden? %i", memoriesList.isHidden);
+        NSLog(@"calendar is hidden? %i", memoriesCalendar.isHidden);
+        [memoriesList setHidden:YES];
+        [memoriesCalendar setHidden:NO];
+    }
+}
 @end
