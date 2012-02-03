@@ -10,4 +10,12 @@
 
 @implementation MemoriesCalendar
 
+-(void)initState {
+    
+}
+
+-(void)clearState {
+    
+}
+
 @end

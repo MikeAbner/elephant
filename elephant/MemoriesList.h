@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MemoriesList : UITableView
+@interface MemoriesList : UITableView <UITableViewDataSource, UITableViewDelegate>
+
+
+-(void)initState;
+-(void)clearState;
 
 @end

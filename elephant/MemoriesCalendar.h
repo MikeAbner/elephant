@@ -10,4 +10,7 @@
 
 @interface MemoriesCalendar : UIScrollView
 
+-(void)initState;
+-(void)clearState;
+
 @end

@@ -25,8 +25,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    //memoriesList        = [[UIViewController alloc] initWithNibName:@"MemoriesList" bundle:nil];
-    //memoriesCalendar    = [[UIViewController alloc] initWithNibName:@"MemoriesCalendar" bundle:nil];
+    NSLog(@"Setting memoriesList datasource and delegate to memoriesList");
+    memoriesList.dataSource = memoriesList;
+    memoriesList.delegate   = memoriesList;
 }
 
 - (void)viewDidUnload
@@ -68,20 +69,17 @@
 
 - (IBAction)segmentDidChange:(id)sender {
     UISegmentedControl *segment = (UISegmentedControl *) sender;
-    NSLog(@"segment changed!");
     if (segment.selectedSegmentIndex == 0) {
-        NSLog(@"SELECTED INDEX IS 0");
-        NSLog(@"list is hidden? %i", memoriesList.isHidden);
-        NSLog(@"calendar is hidden? %i", memoriesCalendar.isHidden);
         [memoriesList setHidden:NO];
         [memoriesCalendar setHidden:YES];
+        [memoriesCalendar clearState];
+        [memoriesList initState];
     }
     else {
-        NSLog(@"SELECTED INDEX IS 1");
-        NSLog(@"list is hidden? %i", memoriesList.isHidden);
-        NSLog(@"calendar is hidden? %i", memoriesCalendar.isHidden);
         [memoriesList setHidden:YES];
         [memoriesCalendar setHidden:NO];
+        [memoriesList clearState];
+        [memoriesCalendar initState];
     }
 }
 @end

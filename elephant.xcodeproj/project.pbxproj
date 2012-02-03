@@ -463,6 +463,7 @@
 				EC1A0A6114DA698B00365B19 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EC1A0A6214DA698B00365B19 /* Build configuration list for PBXNativeTarget "elephantTests" */ = {
 			isa = XCConfigurationList;
@@ -471,6 +472,7 @@
 				EC1A0A6414DA698B00365B19 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
