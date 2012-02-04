@@ -68,7 +68,7 @@
 }
 
 - (IBAction)segmentDidChange:(id)sender {
-    UISegmentedControl *segment = (UISegmentedControl *) sender;
+     segment = (UISegmentedControl *) sender;
     if (segment.selectedSegmentIndex == 0) {
         [memoriesList setHidden:NO];
         [memoriesCalendar setHidden:YES];

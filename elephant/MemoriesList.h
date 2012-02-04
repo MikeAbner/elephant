@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MemoriesList : UITableView <UITableViewDataSource, UITableViewDelegate>
 
+
+@interface MemoriesList : UITableView <UITableViewDataSource, UITableViewDelegate> {
+    NSMutableArray *memories;
+}
 
 -(void)initState;
 -(void)clearState;

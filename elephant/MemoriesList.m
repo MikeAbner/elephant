@@ -10,33 +10,29 @@
 
 @implementation MemoriesList
 
-
 // DATASOURCE METHODS
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"cellForRowAtIndexPath called!");
+    NSDictionary    *item = (NSDictionary *) [memories objectAtIndex:indexPath.row];
+    
     UITableViewCell *cell = [[UITableViewCell alloc] init];
-    cell.textLabel.text = @"Test";
+    cell.textLabel.text = [item objectForKey:@"title"];
+    cell.detailTextLabel.text = [item objectForKey:@"date"];
+    NSLog( @"cell? %@", cell);
     return cell;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    NSLog(@"numberOfRowsInSection called!");
-    return 10;
+    return [memories count];
 }
 
 
 // DELEGATE METHODS
 
--(void)reloadData {
-    NSLog(@"RELOADING DATA!");
-
-}
-
 
 -(void)initState {
-    NSMutableArray *memories = [[NSMutableArray alloc] init];
-    for (int i = 0; i < 10; i++) {
+    memories = [[NSMutableArray alloc] init];
+    for (int i = 0; i < 4; i++) {
         NSMutableDictionary *item = [[NSMutableDictionary alloc] init];
         NSString *title = [[NSString alloc] initWithFormat:@"Memory #%i", i];
         NSString *date  = [[NSString alloc] initWithFormat:@"2012-01-0%i", i];
