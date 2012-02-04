@@ -10,11 +10,8 @@
 
 
 
-@interface MemoriesList : UITableView <UITableViewDataSource, UITableViewDelegate> {
-    NSMutableArray *memories;
-}
+@interface MemoriesList : UITableView <UITableViewDataSource, UITableViewDelegate>
 
--(void)initState;
--(void)clearState;
+@property (weak, nonatomic) NSMutableArray *memories;
 
 @end

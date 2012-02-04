@@ -133,7 +133,7 @@
                 <relationship kind="action" name="segmentDidChange:"/>
                 <relationship kind="outlet" name="memoriesCalendar" candidateClass="MemoriesCalendar"/>
                 <relationship kind="outlet" name="memoriesList" candidateClass="MemoriesList"/>
-                <relationship kind="outlet" name="segment" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="segment" candidateClass="UISegmentedControl"/>
             </relationships>
         </class>
         <class className="MemoriesCalendar" superclassName="UIScrollView">

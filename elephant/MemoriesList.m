@@ -10,6 +10,8 @@
 
 @implementation MemoriesList
 
+@synthesize memories;
+
 // DATASOURCE METHODS
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -18,7 +20,6 @@
     UITableViewCell *cell = [[UITableViewCell alloc] init];
     cell.textLabel.text = [item objectForKey:@"title"];
     cell.detailTextLabel.text = [item objectForKey:@"date"];
-    NSLog( @"cell? %@", cell);
     return cell;
 }
 
@@ -29,23 +30,5 @@
 
 // DELEGATE METHODS
 
-
--(void)initState {
-    memories = [[NSMutableArray alloc] init];
-    for (int i = 0; i < 4; i++) {
-        NSMutableDictionary *item = [[NSMutableDictionary alloc] init];
-        NSString *title = [[NSString alloc] initWithFormat:@"Memory #%i", i];
-        NSString *date  = [[NSString alloc] initWithFormat:@"2012-01-0%i", i];
-        [item setObject:title forKey:@"title"];
-        [item setObject:date forKey:@"date"];
-        [memories addObject:item];
-    }
-    
-    [self reloadData];
-}
-
--(void)clearState {
-    
-}
 
 @end

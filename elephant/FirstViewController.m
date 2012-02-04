@@ -25,9 +25,10 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    NSLog(@"Setting memoriesList datasource and delegate to memoriesList");
     memoriesList.dataSource = memoriesList;
     memoriesList.delegate   = memoriesList;
+    memories = [self loadMemories];
+    memoriesList.memories = memories;
 }
 
 - (void)viewDidUnload
@@ -72,14 +73,24 @@
     if (segment.selectedSegmentIndex == 0) {
         [memoriesList setHidden:NO];
         [memoriesCalendar setHidden:YES];
-        [memoriesCalendar clearState];
-        [memoriesList initState];
     }
     else {
         [memoriesList setHidden:YES];
         [memoriesCalendar setHidden:NO];
-        [memoriesList clearState];
-        [memoriesCalendar initState];
     }
 }
+
+-(NSMutableArray *)loadMemories {
+    memories = [[NSMutableArray alloc] init];
+    for (int i = 0; i < 4; i++) {
+        NSMutableDictionary *item = [[NSMutableDictionary alloc] init];
+        NSString *title = [[NSString alloc] initWithFormat:@"Memory #%i", i];
+        NSString *date  = [[NSString alloc] initWithFormat:@"2012-01-0%i", i];
+        [item setObject:title forKey:@"title"];
+        [item setObject:date forKey:@"date"];
+        [memories addObject:item];
+    }
+    return memories;
+}
+
 @end
