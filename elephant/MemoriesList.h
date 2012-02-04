@@ -14,4 +14,6 @@
 
 @property (weak, nonatomic) NSMutableArray *memories;
 
+-(UIImage *)imageForDate:(NSDate *)date;
+
 @end

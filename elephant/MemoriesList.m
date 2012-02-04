@@ -16,10 +16,18 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSDictionary    *item = (NSDictionary *) [memories objectAtIndex:indexPath.row];
-    
-    UITableViewCell *cell = [[UITableViewCell alloc] init];
-    cell.textLabel.text = [item objectForKey:@"title"];
-    cell.detailTextLabel.text = [item objectForKey:@"date"];
+    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"basicCell"];
+    NSString *text          = [item objectForKey:@"title"];
+    NSString *dateAsString  = [item objectForKey:@"date"];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy'-'MM'-'dd'"];
+    NSDate *date = [dateFormatter dateFromString:dateAsString];
+    //[dateFormatter setDateFormat:@"MMM d"];
+    //NSString *formattedDate = [dateFormatter stringFromDate:date];
+    UIImage *dateImage = [self imageForDate:date];
+    cell.textLabel.text = text;
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    cell.imageView.image = dateImage;
     return cell;
 }
 
@@ -30,5 +38,10 @@
 
 // DELEGATE METHODS
 
+// LOCAL METHODS
+
+-(UIImage *)imageForDate:(NSDate *)date {
+    return [UIImage imageNamed:@"first.png"];
+}
 
 @end

@@ -17,10 +17,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem width="68" style="plain" systemItem="fixedSpace" id="OQQ-tU-dxs"/>
+                                    <barButtonItem width="73" style="plain" systemItem="fixedSpace" id="OQQ-tU-dxs"/>
                                     <barButtonItem style="plain" id="BlY-sF-rhN">
                                         <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="QCu-4w-DJ4">
-                                            <rect key="frame" x="80" y="8" width="150" height="30"/>
+                                            <rect key="frame" x="85" y="8" width="150" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <segments>
                                                 <segment title="List"/>
@@ -34,7 +34,7 @@
                                             <action selector="segmentDidChange:" destination="2" id="QfB-vM-fbR"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem width="40" style="plain" systemItem="fixedSpace" id="xjV-tJ-cFz"/>
+                                    <barButtonItem width="37" style="plain" systemItem="fixedSpace" id="xjV-tJ-cFz"/>
                                     <barButtonItem systemItem="add" id="ymE-B5-QNf"/>
                                 </items>
                                 <color key="tintColor" name="knobColor" catalog="System" colorSpace="catalog"/>
