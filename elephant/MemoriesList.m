@@ -17,22 +17,23 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSMutableArray *month = (NSMutableArray *) [memories objectAtIndex:indexPath.section];
     NSDictionary    *item = (NSDictionary *) [month objectAtIndex:indexPath.row];
-    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:@"basicCell"];
-    NSString *text          = [item objectForKey:@"title"];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MemoryListCell"];
+    
+    //Date Formatting
     NSString *dateAsString  = [item objectForKey:@"date"];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy'-'MM'-'dd'"];
     NSDate *date = [dateFormatter dateFromString:dateAsString];
-    [dateFormatter setDateFormat:@"MM/dd"];
+    [dateFormatter setDateFormat:@"EE MMM d"];
+    
+    // Cell Contents
     NSString *formattedDate = [dateFormatter stringFromDate:date];
-    //UIImage *dateImage = [self imageForDate:date];
+    NSString *text          = [item objectForKey:@"title"];
+    
+    // Cell Setup
     cell.textLabel.text = formattedDate;
-    cell.textLabel.textAlignment = UITextAlignmentLeft;
-    [cell.textLabel sizeToFit];
     cell.detailTextLabel.text = text;
-    cell.detailTextLabel.textAlignment = UITextAlignmentLeft;
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    //cell.imageView.image = dateImage;
+
     return cell;
 }
 
@@ -54,6 +55,18 @@
 
 
 // DELEGATE METHODS
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"SELECTED A ROW!");
+    //NSMutableArray  *month  = (NSMutableArray *) [memories objectAtIndex:indexPath.section];
+    //NSDictionary    *item   = (NSDictionary *) [month objectAtIndex:indexPath.row];
+    //[tableView deselectRowAtIndexPath:indexPath animated:NO];
+}
+
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"accessoryButtonTapped!!!");
+}
+
 
 // LOCAL METHODS
 

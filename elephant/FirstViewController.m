@@ -25,14 +25,19 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    // get the list of memories
+    memories = [self loadMemories];
+    
+    //setup the memories list
     memoriesList.dataSource = memoriesList;
     memoriesList.delegate   = memoriesList;
-    memories = [self loadMemories];
     memoriesList.memories = memories;
 }
 
 - (void)viewDidUnload
 {
+    memories = nil;
+    
     [self setSegment:nil];
     [self setSegment:nil];
     [self setMemoriesList:nil];

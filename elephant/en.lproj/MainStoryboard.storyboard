@@ -35,21 +35,41 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem width="37" style="plain" systemItem="fixedSpace" id="xjV-tJ-cFz"/>
-                                    <barButtonItem systemItem="add" id="ymE-B5-QNf"/>
+                                    <barButtonItem systemItem="add" id="ymE-B5-QNf">
+                                        <connections>
+                                            <segue destination="Ll3-WL-8U6" kind="modal" id="xpw-fk-ksg"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                                 <color key="tintColor" name="knobColor" catalog="System" colorSpace="catalog"/>
                             </toolbar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="nv2-EC-fJL" customClass="MemoriesList">
                                 <rect key="frame" x="0.0" y="44" width="320" height="367"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" name="controlLightHighlightColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="hi3-b8-ksb">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MemoryListCell" textLabel="zM1-9N-qev" detailTextLabel="a7q-pa-hEh" style="IBUITableViewCellStyleValue2" id="hi3-b8-ksb">
                                         <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Sun Jan 1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" id="zM1-9N-qev">
+                                                    <rect key="frame" x="10" y="15" width="91" height="15"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                                    <color key="textColor" red="0.32156862745098042" green="0.40000000000000002" blue="0.56862745098039214" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Detail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="a7q-pa-hEh">
+                                                    <rect key="frame" x="107" y="12" width="41" height="19"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                     </tableViewCell>
@@ -63,7 +83,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Memories" image="first" id="7"/>
+                    <tabBarItem key="tabBarItem" title="Memories" image="first.png" id="WAH-S3-FgP"/>
+                    <navigationItem key="navigationItem" id="HTi-ur-5hK"/>
                     <connections>
                         <outlet property="memoriesCalendar" destination="rX9-HX-whr" id="9mz-Ys-1ai"/>
                         <outlet property="memoriesList" destination="nv2-EC-fJL" id="fmO-W1-a1t"/>
@@ -71,7 +92,45 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="653" y="-138"/>
+            <point key="canvasLocation" x="1199" y="-448"/>
+        </scene>
+        <scene sceneID="JAX-Lb-bgJ">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bCZ-rB-vZe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="vJd-a1-F8T" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AO7-On-Emq">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" id="CqW-9g-69k">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" name="knobColor" catalog="System" colorSpace="catalog"/>
+                                <items>
+                                    <navigationItem title="Title" id="jWX-kS-VZe"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="qXb-9M-uic"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1740" y="-31"/>
+        </scene>
+        <scene sceneID="GXG-51-gxP">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rvg-kb-5oL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="Ll3-WL-8U6" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Fz6-fy-BUo">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="aDN-ke-pTY"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1752" y="-645"/>
         </scene>
         <scene sceneID="13">
             <objects>
@@ -114,7 +173,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="2" kind="relationship" relationship="viewControllers" id="26"/>
+                        <segue destination="2" kind="relationship" relationship="viewControllers" id="Ig2-l6-nVz"/>
                         <segue destination="3" kind="relationship" relationship="viewControllers" id="27"/>
                     </connections>
                 </tabBarController>
@@ -123,7 +182,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="16" height="16"/>
+        <image name="first.png" width="30" height="30"/>
         <image name="second" width="16" height="16"/>
     </resources>
     <classes>
