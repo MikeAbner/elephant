@@ -82,14 +82,19 @@
 
 -(NSMutableArray *)loadMemories {
     memories = [[NSMutableArray alloc] init];
-    for (int i = 0; i < 4; i++) {
-        NSMutableDictionary *item = [[NSMutableDictionary alloc] init];
-        NSString *title = [[NSString alloc] initWithFormat:@"Memory #%i", i+1];
-        NSString *date  = [[NSString alloc] initWithFormat:@"2012-01-0%i", i+1];
-        [item setObject:title forKey:@"title"];
-        [item setObject:date forKey:@"date"];
-        [memories addObject:item];
+    for (int i = 0; i < 12; i++) {
+        NSMutableArray *month = [[NSMutableArray alloc] init];
+        for (int j = 0; j < 4; j++) {
+            NSMutableDictionary *item = [[NSMutableDictionary alloc] init];
+            NSString *title = [[NSString alloc] initWithFormat:@"Memory #%i", j+1];
+            NSString *date  = [[NSString alloc] initWithFormat:@"2012-0%i-0%i", i+1, j+1];
+            [item setObject:title forKey:@"title"];
+            [item setObject:date forKey:@"date"];
+            [month addObject:item];
+        }
+        [memories addObject:month];
     }
+    
     return memories;
 }
 
